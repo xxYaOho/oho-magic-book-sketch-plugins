@@ -4,14 +4,11 @@ var UI = sketch.UI;
 
 // 创建一个初始值,用于控制输入框的大小
 var initialValue = "";
-for (var i = 0; i < 20; i++) {
-  initialValue += "\n";
-}
 
 // 显示多行输入框,获取用户输入的CSS
 UI.getInputFromUser(
   "请输入CSS代码:",
-  { initialValue: initialValue },
+  { initialValue: initialValue, numberOfLines: 20 },
   (error, cssCode) => {
     if (error) {
       // 处理错误
