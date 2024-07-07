@@ -1,92 +1,23 @@
 # colors-variable-setting
 
-## Installation
+colors-variable-setting 是一个 Sketch 插件,用于管理和更新色板变量。它可以从 CSS 代码中提取颜色变量,并将其导入或更新到 Sketch 文档中。
 
-- [Download](../../releases/latest/download/colors-variable-setting.sketchplugin.zip) the latest release of the plugin
-- Un-zip
-- Double-click on colors-variable-setting.sketchplugin
+## 功能
 
-## Development Guide
+- 从 CSS 代码中提取颜色变量
+- 导入新的色板到 Sketch 文档
+- 更新现有的色板
+- 用户友好的交互界面,可选择导入或更新操作
 
-_This plugin was created using `skpm`. For a detailed explanation on how things work, checkout the [skpm Readme](https://github.com/skpm/skpm/blob/master/README.md)._
+## 安装
 
-### Usage
+1. [下载](../../releases/latest/download/colors-variable-setting.sketchplugin.zip) 插件的最新版本
+2. 解压缩下载的文件
+3. 双击 colors-variable-setting.sketchplugin 文件安装插件
 
-Install the dependencies
+## 使用方法
 
-```bash
-npm install
-```
-
-Once the installation is done, you can run some commands inside the project folder:
-
-```bash
-npm run build
-```
-
-To watch for changes:
-
-```bash
-npm run watch
-```
-
-Additionally, if you wish to run the plugin every time it is built:
-
-```bash
-npm run start
-```
-
-### Custom Configuration
-
-#### Babel
-
-To customize Babel, you have two options:
-
-- You may create a [`.babelrc`](https://babeljs.io/docs/usage/babelrc) file in your project's root directory. Any settings you define here will overwrite matching config-keys within skpm preset. For example, if you pass a "presets" object, it will replace & reset all Babel presets that skpm defaults to.
-
-- If you'd like to modify or add to the existing Babel config, you must use a `webpack.skpm.config.js` file. Visit the [Webpack](#webpack) section for more info.
-
-#### Webpack
-
-To customize webpack create `webpack.skpm.config.js` file which exports function that will change webpack's config.
-
-```js
-/**
- * Function that mutates original webpack config.
- * Supports asynchronous changes when promise is returned.
- *
- * @param {object} config - original webpack config.
- * @param {boolean} isPluginCommand - whether the config is for a plugin command or a resource
- **/
-module.exports = function(config, isPluginCommand) {
-  /** you can change config here **/
-}
-```
-
-### Debugging
-
-To view the output of your `console.log`, you have a few different options:
-
-- Use the [`sketch-dev-tools`](https://github.com/skpm/sketch-dev-tools)
-- Run `skpm log` in your Terminal, with the optional `-f` argument (`skpm log -f`) which causes `skpm log` to not stop when the end of logs is reached, but rather to wait for additional data to be appended to the input
-
-### Publishing your plugin
-
-```bash
-skpm publish <bump>
-```
-
-(where `bump` can be `patch`, `minor` or `major`)
-
-`skpm publish` will create a new release on your GitHub repository and create an appcast file in order for Sketch users to be notified of the update.
-
-You will need to specify a `repository` in the `package.json`:
-
-```diff
-...
-+ "repository" : {
-+   "type": "git",
-+   "url": "git+https://github.com/ORG/NAME.git"
-+  }
-...
-```
+1. 在 Sketch 中,选择 Plugins > colors-variable-setting
+2. 在弹出的对话框中输入或粘贴包含颜色变量的 CSS 代码
+3. 选择要执行的操作:导入新色板或更新现有色板
+4. 插件会自动处理颜色变量,并在完成后显示结果消息

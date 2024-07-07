@@ -1,15 +1,28 @@
 {
   "$schema": "https://raw.githubusercontent.com/sketch-hq/SketchAPI/develop/docs/sketch-plugin-manifest-schema.json",
+  "name": "Colors Variable Setting",
+  "identifier": "com.yourcompany.colors-variable-setting",
+  "version": "1.0.0",
+  "description": "Manage and update color variables in Sketch from CSS code",
+  "author": "xxOhoya",
+  "authorEmail": "tin.coco@outlook.com",
+  "homepage": "https://github.com/yourusername/colors-variable-setting",
+  "compatibleVersion": "70.0",
+  "bundleVersion": 1,
   "icon": "icon.png",
   "commands": [
     {
-      "name": "colors variable management",
-      "identifier": "colors-variable-setting.my-command-identifier",
-      "script": "./main.js"
+      "name": "Import/Update Color Variables",
+      "identifier": "colors-variable-setting.import-update",
+      "script": "./main.js",
+      "shortcut": null,
+      "handlers": {
+        "run": "onRun"
+      }
     }
   ],
   "menu": {
-    "title": "colors variable management",
-    "items": ["colors-variable-setting.my-command-identifier"]
+    "title": "Colors Variable Setting",
+    "items": ["colors-variable-setting.import-update"]
   }
 }
