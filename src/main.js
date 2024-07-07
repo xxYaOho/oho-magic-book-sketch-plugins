@@ -73,12 +73,24 @@ UI.getInputFromUser(
           } else if (choice === "更新现有色板") {
             if (swatch) {
               console.log("Updating swatch:", name, "to", hex);
-              // 删除现有的色板
-              document.swatches = document.swatches.filter(
-                (s) => s.name !== name,
+              // 更新色板颜色，保留 alpha 值
+              var red = parseInt(hex.slice(1, 3), 16) / 255;
+              var green = parseInt(hex.slice(3, 5), 16) / 255;
+              var blue = parseInt(hex.slice(5, 7), 16) / 255;
+              var alpha = parseInt(hex.slice(7, 9), 16) / 255;
+              var mscolor = MSColor.colorWithRed_green_blue_alpha(
+                red,
+                green,
+                blue,
+                alpha,
               );
-              // 重新创建色板
-              document.swatches.push({ name: name, color: hex });
+              swatch.sketchObject.updateWithColor(mscolor);
+
+              // 更新所有使用该色板的地方
+              let swatchContainer = document.sketchObject
+                .documentData()
+                .sharedSwatches();
+              swatchContainer.updateReferencesToSwatch(swatch.sketchObject);
               updatedCount++;
             }
           }
