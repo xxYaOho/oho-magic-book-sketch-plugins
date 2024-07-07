@@ -3,15 +3,13 @@
   "icon": "icon.png",
   "commands": [
     {
-      "name": "my-command",
+      "name": "colors variable management",
       "identifier": "colors-variable-setting.my-command-identifier",
-      "script": "./my-command.js"
+      "script": "./main.js"
     }
   ],
   "menu": {
-    "title": "colors-variable-setting",
-    "items": [
-      "colors-variable-setting.my-command-identifier"
-    ]
+    "title": "colors variable management",
+    "items": ["colors-variable-setting.my-command-identifier"]
   }
 }
