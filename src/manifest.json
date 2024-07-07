@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/sketch-hq/SketchAPI/develop/docs/sketch-plugin-manifest-schema.json",
   "name": "Colors Variable Setting",
   "identifier": "com.yourcompany.colors-variable-setting",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Manage and update color variables in Sketch from CSS code",
   "author": "xxOhoya",
   "authorEmail": "tin.coco@outlook.com",
